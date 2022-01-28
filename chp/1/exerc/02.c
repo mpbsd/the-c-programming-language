@@ -2,6 +2,6 @@
 
 int
 main(void) {
-  printf("Arch Linux is the best!\n");
+  printf("\p\n");
   return 0;
 }
