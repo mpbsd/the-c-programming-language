@@ -6,12 +6,12 @@ main(void)
   double c;
 
   while ((c = getchar()) != EOF)
-    if (c == ' ')
+    if (c == '\b')
       printf("\\b");
     else if (c == '\t')
       printf("\\t");
-    else if (c == '\n')
-      printf("\\n\n");
+    else if (c == '\\')
+      printf("\\\\");
     else
       putchar(c);
 
