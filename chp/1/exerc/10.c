@@ -11,7 +11,7 @@ main(void)
     else if (c == '\t')
       printf("\\t");
     else if (c == '\n')
-      printf("\\n");
+      printf("\\n\n");
     else
       putchar(c);
 
