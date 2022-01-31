@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAXIMUM_WIDTH 1000
+#define MAXIMUM_WIDTH 80
 
 int get_line(char line[], int line_width);
 void copy(char to[], char from[]);
@@ -35,13 +35,19 @@ get_line(char line[], int line_width)
   char c;
   int i;
 
-  for (i = 0; i < line_width - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
-    line[i] = c;
+  for (i = 0; (c = getchar()) != EOF && c != '\n'; ++i)
+    if (i < line_width - 1)
+      line[i] = c;
 
-  if (c == '\n')
-    line[i++] = c;
-
-  line[i] = '\0';
+  if (c == '\n') {
+    if (i < line_width - 1) {
+      line[i++] = c;
+      line[i] = '\0';
+    } else {
+      line[line_width - 2] = c;
+      line[line_width - 1] = '\0';
+    }
+  }
 
   return i;
 }
