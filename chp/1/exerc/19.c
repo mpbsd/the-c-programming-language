@@ -2,6 +2,8 @@
 
 #define MAX_WIDTH 120
 
+void reverse(char l[], int m);
+
 int
 main(void)
 {
@@ -11,11 +13,8 @@ main(void)
 
   while ((c = getchar()) != EOF) {
     if (c == '\n') {
-      for (--i; l[i] == ' ' || l[i] == '\t'; --i) {
-        ;
-      }
-      l[++i] = '\0';
-      printf("%d:\t%s\n", i, l);
+      l[i] = '\0';
+      reverse(l, i);
       i = 0;
     } else {
       if (i < MAX_WIDTH - 1) {
@@ -23,6 +22,17 @@ main(void)
       }
     }
   }
-  
+
   return 0;
+}
+
+void
+reverse(char l[], int m)
+{
+  int i;
+
+  for (i = m - 1; i >= 0; --i)
+    printf("%c", l[i]);
+
+  printf("\n");
 }
