@@ -1,33 +1,25 @@
 #include <stdio.h>
 
-#define MAX_WIDTH 80
+#define MAX_WIDTH 12
 
 int
 main(void)
 {
   char c;
+  char l[MAX_WIDTH];
   int i = 0;
-  char line[MAX_WIDTH];
 
   while ((c = getchar()) != EOF) {
     if (c == '\n') {
-      if (i > 1) {
-        while (line[i] == ' ' || line[i] == '\t') {
-          if (line[i] == ' ') {
-            line[i--] = 'A';
-          } else {
-            line[i--] = 'B';
-          }
-        }
-        line[++i] = '\0';
-        if (i > 0) {
-          printf("%d:\t%s\n", i, line);
-        }
+      for (--i; l[i] == ' ' || l[i] == '\t'; --i) {
+        ;
       }
+      l[++i] = '\0';
+      printf("%d:\t%s\n", i, l);
       i = 0;
     } else {
       if (i < MAX_WIDTH - 1) {
-        line[i++] = c;
+        l[i++] = c;
       }
     }
   }
