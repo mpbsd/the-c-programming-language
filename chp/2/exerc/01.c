@@ -4,16 +4,16 @@
 int
 main(void)
 {
-  printf("%d <= SCHAR <= %d\n", SCHAR_MIN, SCHAR_MAX);
-  printf("0 <= UCHAR <= %d\n", UCHAR_MAX);
-  printf("%d <= SHRT <= %d\n", SHRT_MIN, SHRT_MAX);
-  printf("0 <= USHRT_MAX <= %u\n", USHRT_MAX);
-  printf("%d <= INT <= %d\n", INT_MIN, INT_MAX);
-  printf("0 <= UINT <= %u\n", UINT_MAX);
-  printf("%ld <= LONG <= %ld\n", LONG_MIN, LONG_MAX);
-  printf("0 <= ULONG <= %lu\n", ULONG_MAX);
-  printf("%lld <= LLONG <= %lld\n", LLONG_MIN, LLONG_MAX);
-  printf("0 <= ULLONG <= %llu\n", ULLONG_MAX);
+  printf("          |  type |        minimum value |        maximum value \n");
+  printf("----------+-------+----------------------+----------------------\n");
+  printf("   signed |  char | %20d | %20d\n", CHAR_MIN, CHAR_MAX);
+  printf(" unsigned |  char | %20d | %20d\n", 0, UCHAR_MAX);
+  printf("   signed | short | %20d | %20d\n", SHRT_MIN, SHRT_MAX);
+  printf(" unsigned | short | %20d | %20u\n", 0, USHRT_MAX);
+  printf("   signed |   int | %20d | %20d\n", INT_MIN, INT_MAX);
+  printf(" unsigned |   int | %20d | %20u\n", 0, UINT_MAX);
+  printf("   signed |  long | %20ld | %20ld\n", LONG_MIN, LONG_MAX);
+  printf(" unsigned |  long | %20d | %20lu\n", 0, ULONG_MAX);
 
   return 0;
 }
