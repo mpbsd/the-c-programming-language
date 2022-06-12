@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void) {
+
+  int min_t = 0, max_t = 300, step_t = 20, celsius;
+
+  printf("\n");
+
+  printf(" Celsius | Fahrenheit \n");
+  printf("---------+------------\n");
+
+  for (celsius = min_t; celsius <= max_t; celsius += step_t)
+    printf("%8d | %10.2f\n", celsius, (9.0 / 5.0) * celsius + 32.0);
+
+  printf("\n");
+
+  return 0;
+}
