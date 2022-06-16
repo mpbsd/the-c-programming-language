@@ -1,12 +1,16 @@
 #include <stdio.h>
 
-int main(void) {
+/* Temperature convertion program: Fahrenheit to Celsius. */
+
+int
+main(void)
+{
 
   int min_t = 0, max_t = 300, step_t = 20, fahrenheit;
 
   printf("\n");
 
-  printf(" Fahrenheit | Celsius \n");
+  printf(" FAHRENHEIT | CELSIUS \n");
   printf("------------+---------\n");
 
   for (fahrenheit = min_t; fahrenheit <= max_t; fahrenheit += step_t)

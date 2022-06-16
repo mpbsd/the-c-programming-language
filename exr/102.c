@@ -5,7 +5,9 @@
  * \c, where c is some character not listed above.
  */
 
-int main(void) {
+int
+main(void)
+{
 
   printf("\n");
 
