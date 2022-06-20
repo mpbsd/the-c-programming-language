@@ -5,7 +5,6 @@
 int
 main(void)
 {
-
   int min_t = 0, max_t = 300, step_t = 20, celsius;
 
   printf("\n");

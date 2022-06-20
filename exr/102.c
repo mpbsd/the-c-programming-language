@@ -8,7 +8,6 @@
 int
 main(void)
 {
-
   printf("\n");
 
   printf("  ESCAPE SEQUENCE | VALUE \n");

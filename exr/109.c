@@ -3,24 +3,20 @@
 int
 main(void)
 {
-  int nb = 0; /* number of blank spaces */
-  int nn = 0; /* number of newline characters */
-  int nt = 0; /* number of tabs */
+  int b = 1; /* flag var: 1 if previous char is a blank, 0 otherwise */
   int c;
 
-  while ((c = getchar()) != EOF)
-    if (c == ' ')
-      ++nb;
-    else if (c == '\n')
-      ++nn;
-    else if (c == '\t')
-      ++nt;
-
-  printf("The user typed:\n");
-  printf("\t%d blank spaces\n", nb);
-  printf("\t%d newline characters\n", nn);
-  printf("\t%d tab characters\n", nt);
-  printf("\n");
+  while ((c = getchar()) != EOF) {
+    if (b == 0 && c == ' ') {
+      putchar(c);
+      b = 1;
+    } else if (b == 0 && c != ' ') {
+      putchar(c);
+    } else if (b == 1 && c != ' ') {
+      putchar(c);
+      b = 0;
+    }
+  }
 
   return 0;
 }
